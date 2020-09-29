@@ -32,11 +32,11 @@ export class ConnexionComponent implements OnInit {
     this.loading = true;
     const email = this.connexionForm.get('email').value;
     const password = this.connexionForm.get('password').value;
-    this.auth.connexion(email, password).then(
+    this.auth.login(email, password).then(
       () => {
         this.loading = false;
         
-          this.router.navigate(['acceuil']);
+          this.router.navigate(['/dashboard']);
        
         }
       

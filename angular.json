@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tct-man-app"
+    }
+  },
+  "defaultProject": "tct-man-app",
+  "cli": {
+    "analytics": false
+  }
 }

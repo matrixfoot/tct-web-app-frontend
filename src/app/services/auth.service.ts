@@ -17,10 +17,10 @@ export class AuthService {
 
   constructor(private router: Router,
               private http: HttpClient) {}
-              connexion(email: string, password: string) {
+  login(email: string, password: string) {
                 return new Promise((resolve, reject) => {
                   this.http.post(
-                    'https://backendmanagementapp.herokuapp.com/api/auth/login',
+                    'https://tct-web-app-backend.herokuapp.com/api/auth/login',
                     { email: email, password: password })
                     .subscribe(
                       (authData: {  role:string,accessToken: string, userId: string }) => {
@@ -39,5 +39,35 @@ export class AuthService {
                     );
                 });
               }
+  signup(email: string, password: string, firstname:string, lastname:string,contact:string, fonction:string, role:string) {
+                return new Promise((resolve, reject) => {
+                  this.http.post(
+                    'https://tct-web-app-backend.herokuapp.com/api/auth/signup',
+                    { email: email, password: password, firstname:firstname, lastname:lastname,contact:contact, fonction:fonction, role:role })
+                    .subscribe(
+                      () => {
+                        this.login(email, password).then(
+                          () => {
+                            resolve();
+                          }
+                        ).catch(
+                          (error) => {
+                            reject(error);
+                          }
+                        );
+                      },
+                      (error) => {
+                        reject(error);
+                      }
+                    );
+                });
   
+              }
+  logout() {
+                this.isAuth$.next(false);
+                this.userId = null;
+                this.token = null;
+              }
             }
+  
+          
