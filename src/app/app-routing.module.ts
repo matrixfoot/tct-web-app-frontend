@@ -13,6 +13,8 @@ const routes: Routes = [
     {path: 'connexion', component: ConnexionComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'enregistrement', component: EnregistrementComponent},
+    { path: '', pathMatch: 'full', component: DefaultComponent },
+  { path: '**', redirectTo: '' }
   ];
   @NgModule({
     imports: [
