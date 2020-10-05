@@ -1,20 +1,43 @@
-<header style="height: 150px; display: flex; border-radius: 14px; border: 4px solid #000000;">
-    <div style="height: 150px; width: 155px; background-image: url('../../assets/terrain.jpg'); background-repeat: no-repeat; background-size: cover; display: flex;"> 
-        <h1 style="width: 100; color: white;">
-        TCT WEB APP </h1>
-    </div>
-    <ul style="display: flex;">
-        <li routerLink="/connexion" routerLinkActive="active" *ngIf="!isAuth" style="width: 120px; background-repeat: no-repeat; cursor: pointer; background-size: contain; background-image: url('../../assets/signin.jpg'); background-position: center center;">
-</li>
-        <li routerLink="enregistrement" routerLinkActive="active" *ngIf="!isAuth" style="width: 120px; background-repeat: no-repeat;cursor: pointer; background-size: contain; background-image: url('../../assets/signup.jpg'); background-position: center center;"></li>
-        <li routerLink="acceuil" routerLinkActive="active" *ngIf="isAuth" style="width: 120px; background-repeat: no-repeat; cursor: pointer; background-image: url('../../assets/acceuil.jpg'); background-position: center center; background-size: cover;">
-</li>
-        <li routerLink="nouveauadherent" routerLinkActive="active" *ngIf=" isAuth && currentrole === 'admin'" style="width: 120px; background-repeat: no-repeat; cursor: pointer; background-image: url('../../assets/nouveau%20adherent.jpg'); background-position: center center; background-size: cover;">
-</li>
-        <li routerLink="listeadherent" routerLinkActive="active" *ngIf=" isAuth && currentrole === 'admin'" style="width: 120px; background-repeat: no-repeat; cursor: pointer; background-image: url('../../assets/icone_nos_adherents_a.jpg'); background-position: center center; background-size: cover;">
-</li>
-        <li routerLink="listeutilisateurs" routerLinkActive="active" *ngIf=" isAuth && currentrole === 'admin'" style="width: 120px; background-repeat: no-repeat; cursor: pointer; background-image: url('../../assets/users%20list.jpg'); background-position: center center; background-size: cover;">
-</li>
-        <li routerLink="déconnexion" routerLinkActive="active" *ngIf=" isAuth " style="width: 80px; background-repeat: no-repeat; cursor: pointer; background-size: contain; background-image: url('../../assets/logout.jpg'); background-position: center center; margin-left: 500;"></li>
-    </ul>
-</header>
+<head> 
+    <script src="../header/header.component.ts"></script>     
+    <link rel="stylesheet" href="../header/header.component.scss"> 
+    <link rel="stylesheet" href="
+    https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+</head>
+<body>
+    <nav class="bg-dark navbar navbar-dark navbar-expand-lg">
+        <a class="navbar-brand" href="#">TCT MANAGEMENT APP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" *ngIf="isAuth" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="isAuth" href="#">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="isAuth" href="#">Adherents</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="isAuth" href="#">Contact</a>
+                </li>
+                <li class="nav-item" *ngIf="!isAuth">
+                    <a class="nav-link" routerLink="connexion" routerLinkActive="active" href="#">Connexion</a>
+                </li>                 
+                <li class="nav-item" *ngIf="!isAuth">
+                    <a class="nav-link" routerLink="enregistrement" routerLinkActive="active" href="#">Enregistrement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="onLogout()" *ngIf=" isAuth" routerLinkActive="active" href="#">Déconnexion</a>
+                </li>                 
+            </ul>
+            <form class="form-inline" *ngIf="isAuth">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</body>

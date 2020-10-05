@@ -50,11 +50,11 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.auth.logout();
-    this.router.navigate([ '/connexion']);
+    this.router.navigate([ 'connexion']);
   }
   
   onBackToParts() {
-    this.router.navigate(['/default']);
+    this.router.navigate(['default']);
   }
 
   ngOnDestroy() {

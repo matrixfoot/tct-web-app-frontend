@@ -1,30 +1,44 @@
-<div class="container" style="background-repeat: no-repeat; background-position: center center; background-size: cover; background-image: url('../../assets/signup%20tennis.jpg'); height: 755px;">
-    <div class="col-sm-8 offset-sm-2 mt-2" *ngIf="!loading">
-        <h2 wp-cz-control="blocks_promo1_title" wp-cz-control-label="Title" wp-cz-control-default="Everything is awesome" wp-cz-control-section="blocks_promo1" wp-cz-theme-mod="blocks_promo1_title">Créer votre compte et rejoigner nous!!</h2>
-        <p wp-cz-control="blocks_promo1_text" wp-cz-control-label="Text" wp-cz-control-section="blocks_promo1" wp-cz-theme-mod="blocks_promo1_text">Ajouter votre nouveau compte pour pouvoir bénéficier de tous vos droits</p>
-        <form [formGroup]="enregistrementForm" style="padding-top: 10px; padding-bottom: 12px; ">
-            <div class="form-group" style="padding-top: 4px; padding-bottom: 8px;">
-                <input type="text" id="email" placeholder="Email address" class="form-control" formControlName="email" style="width: 193px;"/>
-            </div>
-            <div class="form-group" style="padding-top: 9px; padding-bottom: 14px;">
-                <input type="text" id="password" placeholder="Add Password" class="form-control" formControlName="password" style="width: 192px;"/>
-            </div>
-            <div class="form-group" style="padding-top: 14px; padding-bottom: 14px;">
-                <input type="text" id="firstname" placeholder="Entrer votre nom" class="form-control" formControlName="firstname" style="width: 192px;"/>
-            </div>
-            <div class="form-group" style="margin-top: 18px; padding-bottom: 19px;">
-                <input type="text" id="lastname" placeholder="Entrer votre prénom" class="form-control" formControlName="lastname" style="width: 192px;"/>
-            </div>
-            <div class="form-group" style="margin-top: 14px; padding-bottom: 16px;">
-                <input type="text" id="fonction" placeholder="Quel est votre fonction" formControlName="fonction" class="form-control" style="width: 192px;"/>
-            </div>
-            <div class="form-group" style="padding-top: 15px; padding-bottom: 14px;">
-                <input type="text" id="contact" placeholder="Coordonnées (mobile/adresse)" formControlName="contact" class="form-control" style="width: 192px;"/>
-            </div>
-            <div class="form-group" style="padding-top: 20px; padding-bottom: 26px;">
-                <input type="text" id="role" placeholder="Votre role" formControlName="role" class="form-control" style="width: 192px;"/>
-            </div>
-            <button class="btn btn-success" (click)="onSignup()" [disabled]="enregistrementForm.invalid" style="position: absolute; left: 5%;">Inscription</button>
-        </form>
+<head> 
+    <script src="../enregistrement/enregistrement.component.ts"></script>     
+    <title>Spinner</title>     
+    <link rel="stylesheet" href="../enregistrement/enregistrement.component.scss"> 
+    <link rel="stylesheet" href="
+https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="
+sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+</head> 
+<body style="height: 100%; max-height: 100%; background-color: transparent;">
+    <div class="container" style="height: 800px; width: 100%; max-width: 100%; background-image: url('../../assets/signup%20tennis.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover; position: absolute;">
+        <div class="spinner-grow text-success" role="status" *ngIf="loading" style="position: absolute; top: 50%; left: 50%; width: 63px; height: 82px;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="col-sm-8 offset-sm-2 mt-2" *ngIf="!loading">
+            <h2 wp-cz-control="blocks_promo1_title" wp-cz-control-label="Title" wp-cz-control-default="Everything is awesome" wp-cz-control-section="blocks_promo1" wp-cz-theme-mod="blocks_promo1_title">Créer votre compte et rejoigner nous!!</h2>
+            <p wp-cz-control="blocks_promo1_text" wp-cz-control-label="Text" wp-cz-control-section="blocks_promo1" wp-cz-theme-mod="blocks_promo1_text">Ajouter votre nouveau compte pour pouvoir bénéficier de tous vos droits</p>
+            <form [formGroup]="enregistrementForm" style="padding-top: 10px; padding-bottom: 12px; ">
+                <div class="form-group" style="padding-top: 4px; padding-bottom: 8px;">
+                    <input type="text" id="email" placeholder="Email address" class="form-control" formControlName="email" style="width: 300;"/>
+                </div>
+                <div class="form-group" style="padding-top: 9px; padding-bottom: 14px;">
+                    <input type="text" id="password" placeholder="Add Password" class="form-control" formControlName="password" style="width: 300;"/>
+                </div>
+                <div class="form-group" style="padding-top: 14px; padding-bottom: 14px;">
+                    <input type="text" id="firstname" placeholder="Entrer votre nom" class="form-control" formControlName="firstname" style="width: 300;"/>
+                </div>
+                <div class="form-group" style="margin-top: 18px; padding-bottom: 19px;">
+                    <input type="text" id="lastname" placeholder="Entrer votre prénom" class="form-control" formControlName="lastname" style="width: 300;"/>
+                </div>
+                <div class="form-group" style="margin-top: 14px; padding-bottom: 16px;">
+                    <input type="text" id="fonction" placeholder="Quel est votre fonction" formControlName="fonction" class="form-control" style="width: 300;"/>
+                </div>
+                <div class="form-group" style="padding-top: 15px; padding-bottom: 14px;">
+                    <input type="text" id="contact" placeholder="Coordonnées (mobile/adresse)" formControlName="contact" class="form-control" style="width: 300;"/>
+                </div>
+                <div class="form-group" style="padding-top: 20px; padding-bottom: 26px;">
+                    <input type="text" id="role" placeholder="Votre role" formControlName="role" class="form-control" style="width: 300;"/>
+                </div>
+                <button class="btn btn-success" (click)="onSignup()" [disabled]="enregistrementForm.invalid" style="position: absolute; left: 45%;">Inscription</button>
+            </form>
+            <p>{{ errorMessage }}</p>
+        </div>
     </div>
-</div>
+</body>
