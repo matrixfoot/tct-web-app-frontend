@@ -9,7 +9,7 @@ sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossor
 <div class="spinner-border text-success" role="status" *ngIf="loading" style="position: absolute; top: 50%; left: 50%;">
     <span class="sr-only">Loading...</span>
 </div> 
-<section style="height: 800px; background-image: url('../../assets/terrain%20connexion.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+<section style="height: 1000px; background-image: url('../../assets/terrain%20connexion.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <label *ngIf="!loading" style="position: absolute; top: 50%; left: 46%; color: #ffffff;">Mon Compte TCT</label>
     <label *ngIf="!loading" style="position: absolute; top: 53%; left: 37%; color: #ffffff;">Connectez vous à votre compte pour accéder à toutes les fonctionnalités</label>
     <form [formGroup]="connexionForm" *ngIf="!loading" style="position: relative; top: 65%; width: 500px; left: 43%;">

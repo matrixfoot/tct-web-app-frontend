@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     UsersListComponent,
     AdherentsListComponent,
     ConnexionComponent,
-    EnregistrementComponent
+    EnregistrementComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

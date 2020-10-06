@@ -1,1 +1,39 @@
-<p>users-list works!</p>
+<head> 
+    <script src="../users-list/users-list.component.ts"></script>     
+    <link rel="stylesheet" href="../users-list/users-list.component.scss"> 
+    <link rel="stylesheet" href="
+    https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+</head>
+<p class="text-center" style="color: red;" *ngIf="users.length <= 0 ">Merci de contacter votre PMO ou la direction stratégie et pilotage pour vous autoriser l'accès</p>
+<div class="align-items-center d-flex" *ngIf="loading" style="top: 50%; left: 50%; position: absolute;">
+    <strong>Loading...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+</div>
+<div class="users-grid">
+    <h2 class="text-center"> Liste des utilisateurs</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Fonction</th>
+                <th>Contact</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.email}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.fonction}}</td>
+                <td>{{user.Contact}}</td>
+                <td>{{user.role}}</td>
+                <td> 
+                    <button type="button" class="btn btn-success" (click)="getNavigation('view-user', user._id)">View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

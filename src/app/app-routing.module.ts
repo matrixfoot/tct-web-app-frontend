@@ -6,6 +6,7 @@ import { DefaultComponent } from './default/default.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EnregistrementComponent } from './enregistrement/enregistrement.component';
+import { UsersListComponent } from './dashboard/users-list/users-list.component';
 const routes: Routes = [
   
   
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path: 'connexion', component: ConnexionComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'enregistrement', component: EnregistrementComponent},
+    {path: 'users', component: UsersListComponent},
     { path: '', pathMatch: 'full', component: DefaultComponent },
   { path: '**', redirectTo: '' }
   ];
