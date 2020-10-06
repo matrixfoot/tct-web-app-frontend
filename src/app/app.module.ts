@@ -16,8 +16,9 @@ import { EnregistrementComponent } from './enregistrement/enregistrement.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { AuthInterceptor } from './interceptor/auth-interceptors';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,7 @@ import { FooterComponent } from './footer/footer.component';
     
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
